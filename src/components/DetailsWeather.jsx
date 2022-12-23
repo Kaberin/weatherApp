@@ -12,11 +12,7 @@ function DetailsWeather() {
         {console.log(weather.weather.wind.speed)}
         <h2>
           Ощущается как{" "}
-          <span>
-            {" "}
-            {weather.weather.main.feels_like.toFixed(0)}
-            <sup>°C</sup>
-          </span>
+          <span> {weather.weather.main.feels_like.toFixed(0)} °C</span>
         </h2>
         <h2>Скорость ветра: {weather.weather.wind.speed} м/с</h2>
 

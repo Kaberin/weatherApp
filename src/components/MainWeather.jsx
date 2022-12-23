@@ -24,12 +24,14 @@ function MainWeather(props) {
         {weather.status === "fulfilled" && <h1>{weather.weather.name},</h1>}
         {weather.status === "fulfilled" && (
           <h3>
-            {weather.weather.weather[0].description}{" "}
-            <img
-              src={`http://openweathermap.org/img/wn/${weather.weather.weather[0].icon}.png`}
-              alt="icon"
-            />
+            {weather.weather.weather[0].description} <br />
           </h3>
+        )}
+        {weather.status === "fulfilled" && (
+          <img
+            src={`http://openweathermap.org/img/wn/${weather.weather.weather[0].icon}.png`}
+            alt="icon"
+          />
         )}
         <form
           className="main-weather__form"
