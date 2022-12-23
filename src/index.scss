@@ -6,21 +6,17 @@
 }
 html {
   font-size: 62.5%;
-  // background: linear-gradient(180deg, #005c97 0%, #363795 100%);
   background-repeat: no-repeat;
 }
 .content {
-  // width: 50rem;
   height: 100vh;
-  // background: linear-gradient(180deg, #005c97 0%, #363795 100%);
-  // background-color: #005c97;
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  // padding: 5rem 0;
+  max-height: 100vh;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in;
   background-position: center;
@@ -161,9 +157,6 @@ html {
 @media (max-width: 500px) {
   html {
     font-size: 50%;
-  }
-  .content {
-    max-width: 100vh;
   }
 }
 @media (max-width: 300px) {
