@@ -32,7 +32,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 500px;
   flex-direction: column;
   width: 90%;
   min-width: 38rem;
@@ -155,5 +155,27 @@ html {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+  .content {
+    max-width: 100vh;
+  }
+}
+@media (max-width: 300px) {
+  html {
+    font-size: 40%;
+  }
+  .content {
+    max-width: 100vh;
+  }
+}
+@media (min-width: 1000px) {
+  html {
+    font-size: 75%;
   }
 }

@@ -39,7 +39,7 @@ function MainWeather(props) {
             if (!e.target.cityInput.value) {
               props.getWeatherByPosition();
             } else {
-              dispatch(loadWeatherByCity(e.target.cityInput.value));
+              dispatch(loadWeatherByCity(e.target.cityInput.value.trim()));
               e.target.cityInput.value = "";
             }
           }}
