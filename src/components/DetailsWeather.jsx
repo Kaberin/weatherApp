@@ -17,7 +17,7 @@ function DetailsWeather() {
         <h2>Скорость ветра: {weather.weather.wind.speed} м/с</h2>
 
         <h2>
-          Давление: {(weather.weather.main.pressure * 0.75).toFixed(0)}мм рт.ст
+          Давление: {(weather.weather.main.pressure * 0.75).toFixed(0)} мм рт.ст
         </h2>
         <h2>Влажность: {weather.weather.main.humidity}%</h2>
       </div>
