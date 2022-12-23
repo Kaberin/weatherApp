@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  // background: linear-gradient(180deg, #005c97 0%, #363795 100%);
+  background-repeat: no-repeat;
+}
+.content {
+  // width: 50rem;
+  height: 100vh;
+  // background: linear-gradient(180deg, #005c97 0%, #363795 100%);
+  // background-color: #005c97;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5rem 0;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in;
+  background-position: center;
+  background-size: cover;
+  background-image: url("./weatherBackgrounds/clear.jpg");
+}
+
+.main-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 30rem;
+  max-width: 50rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(black, 0.4);
+  &__preloader {
+    animation: preloaderAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-bottom: 1rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  &__input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #ffb200;
+    padding: 5px 10px;
+    border-radius: 5rem;
+    transition: all 0.3s;
+    color: white;
+    &::placeholder {
+      color: white;
+    }
+    &:focus {
+      box-shadow: 0px 3px 5px rgba(white, 0.4);
+      background-color: rgba(black, 0.2);
+    }
+  }
+  &__city-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: "Cabin", sans-serif;
+    font-weight: 700;
+    font-size: 3.7rem;
+    color: white;
+    & > img {
+      height: 2.8rem;
+    }
+    & > h1 {
+      line-height: 80%;
+      font-weight: 700;
+      font-size: 7rem;
+      text-align: center;
+    }
+    & > h3 {
+      font-weight: 400;
+      line-height: 90%;
+      font-size: 2.8rem;
+      position: relative;
+      & > img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__temperature {
+    font-size: 14rem;
+    position: relative;
+    & > sup {
+      font-size: 3rem;
+      position: absolute;
+      top: 0;
+      right: -2rem;
+      font-family: "Cabin", sans-serif;
+    }
+  }
+}
+.details-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  &__container {
+    font-family: "Cabin", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35rem;
+    gap: 2rem;
+    & > h2 {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.yellow-button {
+  border: none;
+  background-color: #ffb200;
+  height: 3.8rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.7rem;
+  &:active {
+    transform: translateY(0.4rem);
+  }
+}
+
+@keyframes preloaderAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
