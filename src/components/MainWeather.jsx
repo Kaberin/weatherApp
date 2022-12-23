@@ -19,20 +19,24 @@ function MainWeather(props) {
             alt="preloader"
           />
         ) : null}
-        {weather.status === "error" ? <h1>{weather.error.message}</h1> : null}
-        {weather.status === "fulfilled" && <img src={icon1} alt="icon" />}
-        {weather.status === "fulfilled" && <h1>{weather.weather.name},</h1>}
+
+        {weather.status === "error" ? (
+          <h1 className="error">{weather.error.message}</h1>
+        ) : null}
         {weather.status === "fulfilled" && (
-          <h3>
-            {weather.weather.weather[0].description} <br />
-          </h3>
+          <div className="main-weather__fulfilled">
+            <img src={icon1} alt="icon" />
+            <h1>{weather.weather.name},</h1>
+            <h3 className="main-weather__fulfilled_weather">
+              {weather.weather.weather[0].description} <br />
+            </h3>
+            <img
+              src={`http://openweathermap.org/img/wn/${weather.weather.weather[0].icon}.png`}
+              alt="icon"
+            />
+          </div>
         )}
-        {weather.status === "fulfilled" && (
-          <img
-            src={`http://openweathermap.org/img/wn/${weather.weather.weather[0].icon}.png`}
-            alt="icon"
-          />
-        )}
+
         <form
           className="main-weather__form"
           onSubmit={(e) => {
@@ -42,7 +46,7 @@ function MainWeather(props) {
               props.getWeatherByPosition();
             } else {
               dispatch(loadWeatherByCity(e.target.cityInput.value.trim()));
-              e.target.cityInput.value = "";
+              e.target.reset();
             }
           }}
         >

@@ -2,10 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 function DetailsWeather() {
   const weather = useSelector((state) => state.weather);
-  // async function getIcon(id) {
-  //   const res = await fetch(`http://openweathermap.org/img/wn/${id}.png`);
-  //   // const data = res.json();
-  // }
   return (
     <div className="details-weather">
       <div className="details-weather__container">

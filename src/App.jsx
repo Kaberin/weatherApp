@@ -124,6 +124,11 @@ function App() {
             backgroundImage: `url(${mist})`,
           };
         }
+        case "50d": {
+          return {
+            backgroundImage: `url(${mist})`,
+          };
+        }
         default: {
           return {
             backgroundImage: "none",
@@ -142,7 +147,6 @@ function App() {
     <div className="App">
       <div className="content" style={chooseBackgroundImage()}>
         <MainWeather getWeatherByPosition={memoizedWeather} />
-        {/* {weather.status === "fulfilled" && <DetailsWeather />} */}
       </div>
     </div>
   );

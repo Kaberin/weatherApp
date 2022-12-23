@@ -9,26 +9,27 @@ html {
   background-repeat: no-repeat;
 }
 .content {
-  height: 100vh;
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  max-height: 100vh;
+  min-height: 100vh;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in;
   background-position: center;
   background-size: cover;
   background-image: url("./weatherBackgrounds/clear.jpg");
 }
-
+.error {
+  margin-bottom: 1rem;
+}
 .main-weather {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+
   flex-direction: column;
   width: 90%;
   min-width: 38rem;
@@ -53,6 +54,9 @@ html {
     border: none;
     background-color: transparent;
     outline: none;
+    width: 15rem;
+    height: 30px;
+    min-width: 120px;
     border: 2px solid #ffb200;
     padding: 5px 10px;
     border-radius: 5rem;
@@ -66,6 +70,28 @@ html {
       background-color: rgba(black, 0.2);
     }
   }
+  &__fulfilled {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > img {
+      // margin-bottom: 1rem;
+    }
+    & > h1 {
+      line-height: 90%;
+      text-align: center;
+      word-wrap: break-word;
+      word-break: break-all;
+      margin-bottom: 1rem;
+      font-size: 6rem;
+      font-weight: 700;
+    }
+    &_weather {
+      font-weight: 400;
+      line-height: 90%;
+      text-align: center;
+    }
+  }
   &__city-name {
     display: flex;
     flex-direction: column;
@@ -75,32 +101,7 @@ html {
     font-weight: 700;
     font-size: 3.7rem;
     color: white;
-    & > img {
-      height: 2.8rem;
-    }
-    & > h1 {
-      line-height: 80%;
-      font-weight: 700;
-      font-size: 6rem;
-      text-align: center;
-    }
-    & > h3 {
-      font-weight: 400;
-      line-height: 90%;
-      font-size: 2.8rem;
-      // position: relative;
-    }
-    & > img {
-      // position: absolute;
-      // right: -5rem;
-      // line-height: 100px;
-      // top: 50%;
-      // transform: translateY(-50%);
-      height: 50px;
-      width: 50px;
-    }
   }
-
   &__temperature {
     font-size: 14rem;
     position: relative;
@@ -153,6 +154,7 @@ html {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -160,12 +162,12 @@ html {
 
 @media (max-width: 500px) {
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 }
 @media (max-width: 300px) {
   html {
-    font-size: 40%;
+    font-size: 30%;
   }
   .content {
     max-width: 100vh;
@@ -173,6 +175,6 @@ html {
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 75%;
+    font-size: 70%;
   }
 }
