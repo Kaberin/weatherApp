@@ -52,13 +52,13 @@ function MainWeather(props) {
         >
           <input
             type="text"
-            placeholder="Choose location"
+            placeholder="Введите место"
             className="main-weather__input"
             name="cityInput"
             autoComplete="off"
           />
 
-          <YellowButton text="Search location" />
+          <YellowButton text="Искать" />
         </form>
         <div className="main-weather__actual-temperature">
           {weather.status === "fulfilled" && (
